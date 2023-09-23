@@ -1,0 +1,18 @@
+#include <stdio.h>
+#define MAX 10 //define定义的标识符常量
+enum Color
+{
+	RED,    //0
+	YELLOW, //1
+	BLUE    //2
+};
+int main()
+{
+	const int num = 4;
+	printf("num=%d\n", num); //num是const修饰的常变量，const是常属性
+	int arr[MAX] = { 0 };    //数组里面只能是常量
+	printf("MAX=%d\n", MAX); //MAX相当于一个常量10
+	enum Color color = BLUE; //enum是枚举常量
+	printf("color=%d\n", color);
+	return 0;
+}
