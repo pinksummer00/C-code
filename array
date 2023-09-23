@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main()
+{
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };//存放10个整型数字的数组
+	printf("第四个元素：%d\n", arr[4]);//访问第四个元素
+	int i = 0;
+	while (i < 10)
+	{
+		printf("数组元素有：%d\n", arr[i]);//访问每一个元素，即遍历
+		i++;
+	}
+	return 0;
+}
