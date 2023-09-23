@@ -1,0 +1,6 @@
+#include <stdio.h>
+int main()
+{
+	printf("%d\n", strlen("C:\test\32\test.c"));// \t是水平制表符，\32表示八进制
+	return 0;
+}
