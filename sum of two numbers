@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main()
+{
+	int num1 = 0;
+	int num2 = 0;
+	int sum = 0;//C语言语法规定：变量要定义在代码块的最前面
+	scanf("%d %d", &num1, &num2);//scanf是输入函数，&是取地址符号
+	sum = num1 + num2;
+	printf("sum=%d\n", sum);//随机输入两个数字，输出sum
+	return 0;
+}
