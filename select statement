@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main()
+{
+	int input = 0;
+	printf("加入比特\n");
+	printf("你要好好学习吗\n");//输入1或0
+	scanf("%d", &input);
+	if (input == 1)
+		printf("offer\n");
+	else
+		printf("卖红薯");
+	return 0;
+}
