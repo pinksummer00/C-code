@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include<string.h>
+struct Book //创建一个结构体类型
+{
+	char name[20];
+	short price;
+}; //分号不可缺少，专门结束类型定义的
+int main()
+{
+	struct Book b1 = { "C语言",55 };
+	printf("书名：%s\n", b1.name);
+	printf("价格：%d元\n", b1.price);
+	strcpy(b1.name, "C++"); //string copy是字符串拷贝，属于库函数，应加一个头文件
+	printf("修改后的书名：%s\n", b1.name);
+	b1.price = 65;
+	printf("修改后的价格：%d元\n", b1.price);
+	return 0;
+}
