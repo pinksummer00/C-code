@@ -1,7 +1,7 @@
 #include <stdio.h>
 void test()
 {
-	static int a = 1;//静态的局部变量
+	static int a = 1;//static静态的局部变量
     a++;
 	printf("a=%d\n", a);
 }
@@ -17,6 +17,9 @@ int main()
 }
 
 
+
+
+#include <stdio.h>
 int Add(int x, int y)
 {
 	int z = x + y;
