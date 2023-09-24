@@ -6,6 +6,9 @@ int main()
 	printf("b=%d\n", b);
 	return 0;
 }
+
+
+#include <stdio.h>
 int main()
 {
 	int a = 3;
@@ -14,6 +17,9 @@ int main()
 	printf("c=%d\n", c);
 	return 0;
 }
+
+
+#include <stdio.h>
 int main()
 {
 	int a = 10;
@@ -23,6 +29,9 @@ int main()
 	printf("%d\n", !a);//逻辑反操作
 	return 0;
 }
+
+
+#include <stdio.h>
 int main()
 {
 	int a = 10;
@@ -33,6 +42,9 @@ int main()
 	printf("%d\n", sizeof(arr)/sizeof(arr[0]));// 计算元素个数
 	return 0;// sizeof是单目操作符，以字节为单位
 }
+
+
+#include <stdio.h>
 int main()
 {
 	int a = 0;
@@ -40,6 +52,9 @@ int main()
 	printf("%d\n", b);
 	return 0;
 }
+
+
+#include <stdio.h>
 int main()
 {
 	int a = 10;
@@ -50,6 +65,9 @@ int main()
 	printf("a=%d b=%d\n", a, b);
 	return 0;
 }
+
+
+#include <stdio.h>
 int main()
 {
 	int a = 10;
