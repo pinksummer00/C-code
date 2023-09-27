@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+	int ch = 0;
+	while (ch = getchar() != EOF) //end of file=-1,是文件头结束标志
+		{
+			putchar(ch); // 按ctrl+Z（相当于-1）才会终止循环
+		}
+	return 0;
+}
