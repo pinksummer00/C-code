@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+	int ret = 0;
+	int ch = 0;
+	char password[20] = { 0 };
+	printf("请输入密码：");
+	scanf("%s", &password); //输入密码，并存放在password数组
+	while (ch = getchar() != '\n') //缓冲区还剩余‘\n’
+	{
+		; //空语句，接受\n，使其消化完
+	}
+	printf("请输入密码（Y/N）:");
+	ret = getchar();
+	if (ret == 'Y')
+	{
+		printf("确认成功\n");
+	}
+	else
+	{
+		printf("确认失败\n");
+	}
+	return 0;
+}
