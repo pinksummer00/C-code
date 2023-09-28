@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<windows.h>
+#include<string.h>
+int main()
+{
+	char arr1[] = "welcome to bit!!!!!!";
+	char arr2[] = "####################";
+	int left = 0;
+	int right = strlen(arr1) - 1;//下标个数=数组个数-1
+	while (left <= right)
+	{
+		arr2[left] = arr1[left];
+		arr2[right] = arr1[right];
+		printf("%s\n", arr2);
+		Sleep (1000);//休息1秒 1000ms=1s 头文件是windows.h
+		system("cls");//执行命令的函数，头文件是stdlib.h ,cls是清空屏幕
+		left++;
+		right--;
+	}
+	printf("%s\n", arr2);
+	return 0;
+}
