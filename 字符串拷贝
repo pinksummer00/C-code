@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char arr1[] = "bit";//隐藏\0
+	char arr2[20] = "#############";
+	strcpy(arr2, arr1); //将arr1中的内容拷贝到arr2中
+	printf("%s\n", arr2);
+	return 0;
+}
+
+
+
+
+#include<stdio.h>
+int main()
+{
+	char arr[] = "hello world";
+	memset(arr, '*', 5); //memory set是内存设置的意思//把arr中的前5个变成*
+	printf("%s\n", arr);
+	return 0;
+}
