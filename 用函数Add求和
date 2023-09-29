@@ -1,0 +1,18 @@
+#include<stdio.h>
+Add(int x, int y)
+{
+	int z = 0;
+	z = x + y;
+	return z;
+}
+int main()
+{
+	/*int a = 10;
+	int b = 20;*/
+	int a = 0;
+	int b = 0;
+	scanf("%d %d", &a, &b);
+	int sum = Add(a, b);//返回值接收用sum
+	printf("sum=%d\n", sum);
+	return 0;
+}
