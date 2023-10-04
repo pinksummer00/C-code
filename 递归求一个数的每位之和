@@ -1,0 +1,20 @@
+#include<stdio.h>
+int digitsum(unsigned int num)
+{
+	if (num > 9)
+	{
+		return digitsum(num / 10) + num % 10;//递归思想
+	}
+	else
+	{
+		return num;
+	}
+}
+int main()
+{
+	unsigned int num = 0;
+	scanf("%d", &num);
+	int ret = digitsum(num);//求一个数的每位之和
+	printf("ret=%d\n", ret);
+	return 0;
+}
