@@ -1,0 +1,159 @@
+//3个for循环
+#include<stdio.h>
+#include<math.h>
+#define PI 3.1415926
+int main()
+{
+	int i = 1;
+	int j = 1;
+	int p = 1;//3个循环
+	int n = 0;
+	printf("请输入点数");
+	scanf("%d", &n);
+
+	double du = 0;
+	double fen = 0;
+	double miao = 0;
+	double fwj = 0;//方位角
+	double jd = 0;
+	double d = 0;
+	double sum = 0;
+	double f = 0;//闭合差
+	double ft = 0;
+
+	double x0 = 0;
+	double y0 = 0;
+	printf("请输入已知x0坐标");
+	scanf("%lf", &x0);
+	printf("请输入已知y0坐标");
+	scanf("%lf", &y0);
+
+	double x = 0;
+	double y = 0;
+	double s = 0;
+	double sum_x = 0;
+	double sum_y = 0;
+	double sum_s = 0;
+	double v_x = 0;
+	double v_y = 0;
+	double X = 0;
+	double Y = 0;
+	double XX = 0;//各点的坐标
+	double YY = 0;
+
+	if (n >= 3 )
+	{
+		printf("请输入方位角\n");
+		scanf("%lf %lf %lf", &du, &fen, &miao);
+		double a = du;
+		double b = fen / 60;
+		double c = miao / 3600;
+		fwj = a + b + c;
+		//printf("方位角fwj=%lf\n", fwj);
+		
+		for(i=1;i<=n;i++)
+		{
+			printf("请按顺序输入度、分、秒\n");
+			scanf("%lf %lf %lf", &du, &fen, &miao);
+			double a = du;
+			double b = fen / 60;
+			double c = miao / 3600;
+			jd = a + b + c;
+			d = jd;
+			printf("分配前d=%lf\n", d);
+			sum += jd;//实测值
+	     }
+		printf("实测角总和=%lf\n", sum);
+		double sum0 = (n - 2) * 180;//理论值
+		printf("理论角总和=%lf\n", sum0);
+		f = sum - sum0;//闭合差
+		printf("闭合差=%lf秒\n", f*3600);
+		ft = f / n;//闭合差调整
+
+
+		for (j = 1; j < i; j++)
+		{
+			printf("请再一次输入度、分、秒\n");
+			scanf("%lf %lf %lf", &du, &fen, &miao);
+			double a = du;
+			double b = fen / 60;
+			double c = miao / 3600;
+			double fd = 0;
+			double hd = 0;
+			jd = a + b + c;
+			d =jd+ ft;// 闭合差分配
+			printf("分配后d=%lf\n", d);
+			fd = fwj + d;//分配后的方位角
+			if (fd > 180)
+			{
+				fd = fd - 180;
+			}
+			else
+			{
+				fd = fd + 180;
+			}
+			//printf("方位角fd=%lf\n", fd);
+			fwj=fd;
+			printf("请输入距离\n");
+			scanf("%lf", &s);
+			hd = fd * PI / 180;//角度转弧度
+			x = cos(hd) * s;//坐标闭合差与调差
+			y = sin(hd) * s;//x=cos(方位角(弧度))*边长 //y=sin(方位角（弧度）)*边长
+			sum_x += x;//边长计算之和
+			sum_y += y;
+			sum_s += s;
+		}
+
+		for (p = 1; p < j; p++)
+		{
+			printf("请最后一次输入度、分、秒\n");
+			scanf("%lf %lf %lf", &du, &fen, &miao);
+			double a = du;
+			double b = fen / 60;
+			double c = miao / 3600;
+			double fd = 0;
+			double hd = 0;
+			jd = a + b + c;
+			d = jd + ft;// 闭合差分配
+			//printf("分配后d=%lf\n", d);
+			fd = fwj + d;//分配后的方位角
+			if (fd > 180)
+			{
+				fd = fd - 180;
+			}
+			else
+			{
+				fd = fd + 180;
+			}
+			//printf("方位角fd=%lf\n", fd);
+			fwj = fd;
+			printf("请输入距离\n");
+			printf("\n");
+			scanf("%lf", &s);//x=cos(方位角(弧度))*边长 //y=sin(方位角（弧度）)*边长
+			hd = fd * PI / 180;
+			x = cos(hd) * s;//坐标闭合差与调差
+			y = sin(hd) * s;
+			/*printf("x=%lf y=%lf\n", x, y);*/
+
+			v_x = -(sum_x / sum_s * s);//按边长分配后
+			v_y = -(sum_y / sum_s * s);
+			/*printf("v_x=%lf v_y=%lf\n", v_x, v_y);*/
+
+			X = x + v_x;//改正后的值
+			Y = y + v_y;
+			/*printf("X=%lf Y=%lf\n", X, Y);*/
+
+			XX = X + x0;//各点坐标的计算
+			YY = Y + y0;
+			printf("XX=%lf YY=%lf\n",XX,YY);
+		}
+	}
+	else
+	{
+		printf("请输入3以上的数字\n");
+	}
+	return 0;
+}
+
+
+
