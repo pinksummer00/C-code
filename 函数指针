@@ -1,0 +1,13 @@
+#include <stdio.h>
+int Add(int x, int y)
+{
+	int z = 0;
+	z = x + y;
+	return z;
+}
+int main()
+{
+	int (*pa)(int, int) = Add;//函数指针//指向函数的指针
+	printf("%d\n", (*pa)(2,3));
+	return 0;
+}
