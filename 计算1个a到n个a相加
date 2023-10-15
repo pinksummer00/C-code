@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+	int a = 0;
+	int n = 0;
+	scanf("%d %d", &a, &n);//2,5
+	int sum = 0;//2   22   222   2222   22222
+	int i = 0;
+	int ret = 0;
+	for (i = 0; i < n; i++)
+	{
+		ret = ret * 10 + a;
+		sum += ret;//计算求和//1个a到n个a相加
+	}
+	printf("sum=%d\n", sum);
+	return 0;
+}
