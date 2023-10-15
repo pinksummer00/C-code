@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+	//char arr[] = "abcdef";
+	//char* pc = arr;
+	//printf("%s\n", arr);
+	//printf("%s\n", pc);//pc是一个字符指针
+	return 0;
+}
+#include <stdio.h>
+int main()
+{
+	char* p = "abcdef";
+	printf("%c\n", *p);//*p传的是a的地址
+	printf("%s\n", p);//p传的是字符串
+	return 0;
+}
