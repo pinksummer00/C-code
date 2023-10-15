@@ -1,0 +1,15 @@
+#include <stdio.h>
+void Print(char* str)
+{
+	printf("hehe%s", str);
+}
+void test(void(*p)(char*))//回调函数//通过函数指针调用函数
+{
+	printf("test\n");
+	p("bit");
+}
+int main()
+{
+	test(Print);
+	return 0;
+}
