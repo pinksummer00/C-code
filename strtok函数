@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+int main()
+{
+	char arr[] = "zpw@bitedu.tech";
+	char* p = "@.";
+	/*char buf[1024] = { 0 };
+	strcpy(buf, arr);*/
+	char* ret = strtok(arr, p);
+	printf("%s\n", ret);
+	ret = strtok(NULL, p);
+	printf("%s\n", ret);
+	ret = strtok(NULL, p);
+	printf("%s\n", ret);
+	return 0;
+}
+
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+int main()
+{
+	char arr[] = "zpw@bitedu.tech";
+	char* p = "@.";
+	char* ret = NULL;
+	for (ret = strtok(arr, p);ret != NULL;ret = strtok(NULL, p))
+	{
+		printf("%s\n",ret);
+	}
+	return 0;
+}
+
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+int main()
+{
+	char arr[] = "192.168.31.121";
+	char* p = ".";
+	char* ret = NULL;
+	for (ret = strtok(arr, p);ret != NULL;ret = strtok(NULL, p))
+	{
+		printf("%s\n", ret);
+	}
+	return 0;
+}
