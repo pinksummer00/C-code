@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<ctype.h>
+int main()
+{
+	char ch = 'w';
+	int ret = islower(ch);//非0就是小写字母//头文件是<ctype.h>
+	printf("%d\n", ret);
+	return 0;
+}
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+	char ch = '2';
+	int ret = isdigit(ch);//非0就是数字
+	printf("%d\n", ret);
+	return 0;
+}
+
+
+
+
+#include<stdio.h>
+int main()
+{
+	char ch = tolower('Q');//转换成小写字母
+	putchar(ch);
+	char chh = toupper('m');//转换成大写字母
+	putchar(chh);
+	return 0;
+}
+
+
+
+
+
+#include<stdio.h>
+#include<ctype.h>
+int main()
+{
+	char arr[] = "I AM A STUDENT";
+	int i = 0;
+	while (arr[i])
+	{
+		if (isupper(arr[i]))//判断是否是大写字母
+		{
+			arr[i] = tolower(arr[i]);//转换成小写字母
+		}
+		i++;
+	}
+	printf("%s\n", arr);
+	return 0;
+}
