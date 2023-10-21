@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+#include<errno.h>
+int main()
+{
+	/*char* str = strerror(4);
+	printf("%s\n", str);*/
+	char* str = strerror(errno);
+	//errno是一个全局的错误码变量，当C语言的库函数在执行过程中发生了错误，就会把对应的错误码，赋值到errno中
+	//头文件是<errno.h>
+	FILE* pf = fopen("1.txt", "r");//打开文件
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+	}
+	else
+	{
+		printf("open file successed\n");
+	}
+	return 0;
+}
