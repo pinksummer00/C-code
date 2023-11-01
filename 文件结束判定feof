@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+	FILE* pf = fopen("D:\\C语言\\test.txt", "r");
+	if (pf == NULL)
+	{
+		perror("open file");//错误报告函数
+		return 0;
+	}
+	int ch = 0;
+	while (ch = fgetc(pf) != EOF)
+	{
+		putchar(ch);
+	}
+	if (ferror(pf))
+	{
+		printf("error\n");
+	}
+	else if(feof(pf))
+	{
+		printf("end of file\n");
+	}
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
