@@ -1,0 +1,13 @@
+#include <stdio.h>
+enum color
+{
+	RED = 1,
+	YELLOW = 3,
+	BLUE=6 //赋初始值
+};
+int main()
+{
+	enum color c = BLUE;
+	printf("%d %d %d\n", RED, YELLOW, BLUE);
+	return 0;
+}
