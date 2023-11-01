@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<string.h>
+#include<errno.h>
+struct s
+{
+	int n;
+	float score;
+	char arr[10];
+};
+int main()
+{
+	struct s stu = {0};
+	FILE* pf = fopen("D:\\C语言\\test.txt", "r");//绝对路径要防止转义
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	fscanf(pf, "%d %f %s", &(stu.n), &(stu.score), stu.arr);
+	printf("%d %f %s", &(stu.n), &(stu.score), stu.arr);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
+
+
+
+
+
+#include<stdio.h>
+#include<string.h>
+#include<errno.h>
+struct s
+{
+	int n;
+	float score;
+	char arr[10];
+};
+int main()
+{
+	struct s stu = { 100,3.14f,"bit" };
+	FILE* pf = fopen("D:\\C语言\\TEST2.txt", "w");//绝对路径要防止转义
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	fprintf(pf, "%d %f %s", stu.n, stu.score, stu.arr);//以格式化的形式写文件
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
