@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include<string.h>
+#include<errno.h>
+int main()
+{
+	FILE* pf = fopen("D:\\C语言\\test.txt", "r");//绝对路径要防止转义
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	printf("%c", fgetc(pf));//读取文件并打印出来
+	printf("%c", fgetc(pf));
+	printf("%c", fgetc(pf));
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
+
+
+
+#include <stdio.h>
+#include<string.h>
+#include<errno.h>
+int main()
+{
+	FILE* pf = fopen("D:\\C语言\\TEXT.txt", "w");//绝对路径要防止转义
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	fputc('b', pf);//将b i t写到文件中去
+	fputc('i', pf);
+	fputc('t', pf);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
