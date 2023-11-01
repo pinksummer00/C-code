@@ -1,0 +1,35 @@
+#include<stdio.h>
+struct s
+{
+	int n;
+	float score;
+	char arr[10];
+};
+int main()
+{
+	struct s stu = { 100,3.14f,"abcdef" };
+	struct s tmp = { 0 };
+	char buf[1024] = { 0 };
+	sscanf(buf, "%d %f %s", &(tmp.n), &(tmp.score), tmp.arr);
+	printf("%d %f %s\n", tmp.n, tmp.score, tmp.arr);
+	return 0;
+}
+
+
+
+
+#include<stdio.h>
+struct s
+{
+	int n;
+	float score;
+	char arr[10];
+};
+int main()
+{
+	struct s stu = { 100,3.14f,"abcdef" };
+	char buf[1024] = { 0 };
+	sprintf(buf, "%d %f %s", stu.n, stu.score, stu.arr);
+	printf("%s\n", buf);
+	return 0;
+}
