@@ -1,0 +1,14 @@
+#include <stdio.h>
+struct s
+{
+	int a : 2;//2个比特位
+	int b : 5;//5个比特位
+	int c : 10;//10个比特位
+	int d : 30;//30个比特位
+};
+int main()
+{
+	struct s s;
+	printf("%d\n", sizeof(s));
+	return 0;
+}
