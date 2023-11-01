@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include<string.h>
+#include<errno.h>
+int main()
+{
+	char buf[1024] = { 0 };
+	FILE* pf = fopen("D:\\C语言\\test.txt", "r");//绝对路径要防止转义
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	fgets(buf, 1024, pf);//读取文件
+	printf("%s", buf);
+	fgets(buf, 1024, pf);
+	printf("%s", buf);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
+
+
+
+#include <stdio.h>
+#include<string.h>
+#include<errno.h>
+int main()
+{
+	char buf[1024] = { 0 };
+	FILE* pf = fopen("D:\\C语言\\TEST1.txt", "w");//绝对路径要防止转义
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	fputs("hello\n", pf);//需要自己添加换行
+	fputs("world\n", pf);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
